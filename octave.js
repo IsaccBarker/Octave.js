@@ -1,8 +1,5 @@
 console.log("Starting octave.js....")
 
-// Check if the user has a deal
-user_has_deal_func()
-
 const messaging_type = {
 	TEXT: 0,
 	EMAIL: 1,

@@ -1,5 +1,8 @@
 console.log("Starting octave.js....")
 
+// Check if the user has a deal
+user_has_deal_func()
+
 const messaging_type = {
 	TEXT: 0,
 	EMAIL: 1,
@@ -21,28 +24,17 @@ const c_letter_func = function (data) {
 	warn_not_to_use("c_letter_func")
 }
 
-const c_user_has_deal = function (data) {
+const c_user_has_deal = function () {
 	warn_not_to_use("c_user_has_deal")
 }
 
 var text_func = c_text_func
 var email_func = c_email_func
 var letter_func = c_letter_func
-var user_has_deal = c_cookie_func
+var user_has_deal_func = c_user_has_deal
 
 function set_display_warnings(value) {
 	display_warnings = value
-}
-
-function get_sheet_id(link) {
-	console.log("Getting sheet id from " + link)
-	var id = link.split("/")[5]
-	console.log("Got " + id)
-	return id
-}
-
-function set_sheet_id(id) {
-	spread_sheet_id = id
 }
 
 function sign_person_up(method, data) {
@@ -66,6 +58,10 @@ function set_email_sign_person_up(func) {
 
 function set_letter_sign_person_up(func) {
 	letter_func = func
+}
+
+function set_user_has_deal(func) {
+	user_has_deal_func = func
 }
 
 function warn_not_to_use(name) {
